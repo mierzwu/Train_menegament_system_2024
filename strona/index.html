@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Łódzkie Koleje Aglomeracyjne - Wyszukiwarka połączeń</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script> <!-- Dodanie skryptu JavaScript -->
+</head>
+<body>
+    <!-- Górna belka z datą, godziną oraz panelem logowania/rejestracji -->
+    <div class="top-bar-small">
+        <div class="date-time">
+            <p id="currentDate"></p>
+            <p id="currentTime"></p>
+        </div>
+        <div class="auth-panel-small">
+            <a href="/login" class="login-link">Zaloguj się</a> | 
+            <a href="/register" class="register-link">Zarejestruj się</a>
+        </div>
+    </div>
+
+    <header>
+        <div class="logo-container">
+            <img src="logo.png" alt="Łódzkie Koleje Aglomeracyjne Logo">
+        </div>
+        <div class="site-name">
+            <h1>Łódzkie Koleje Aglomeracyjne</h1>
+        </div>
+        <nav>
+            <ul class="menu">
+                <li><a href="#">Strona Główna</a></li>
+                <li><a href="#">Rozkład Jazdy</a></li>
+                <li><a href="#">Cennik</a></li>
+                <li><a href="#">Informacje</a></li>
+                <li><a href="#">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="content">
+            <div class="search-container">
+                <h2>Znajdź swoje połączenie:</h2>
+                <form id="searchForm" action="/search" method="get" onsubmit="handleFormSubmit(event)">
+                    <label for="from_station">Skąd:</label>
+                    <input type="text" id="from_station" name="from_station" placeholder="Wpisz stację początkową" required> 
+                    
+                    <label for="to_station">Dokąd:</label>
+                    <input type="text" id="to_station" name="to_station" placeholder="Wpisz stację docelową" required>
+                    
+                    <label for="date">Data podróży:</label>
+                    <input type="date" id="date" name="date" required>
+                    
+                    <button type="submit">Wyszukaj</button>
+                </form>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>© 2024 Łódzkie Koleje Aglomeracyjne. Wszystkie prawa zastrzeżone.</p>
+    </footer>
+</body>
+</html>
